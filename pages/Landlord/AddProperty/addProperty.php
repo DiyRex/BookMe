@@ -12,6 +12,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Landlord") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
     <link rel="stylesheet" href="./pages/Landlord/AddProperty/addProperty.css">
+    <link rel="stylesheet" href="./components/navbar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
@@ -20,10 +21,11 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Landlord") {
 </head>
 
 <body>
+    <?php include_once './components/navbar.php';?>
     <div class="container d-flex flex-column align-items-center justify-content-center">
         <h1 class="text-center title"><i class="fa-solid fa-house" style="color: #38B000;"></i> Add <span style="color: #38b000">Property</span></h1>
         <div class="box col-10 col-md-6 text-white">
-            <form action="/addProperty" method="POST">
+            <form action="/addProperty" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="titleInput">Title</label>
                     <div class="input-group">
@@ -100,7 +102,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Landlord") {
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fa-solid fa-images" style="color: #38B000;"></i></div>
                         </div>
-                        <input type="file" class="form-control image-choose" id="imageUpload" multiple name="images">
+                        <input type="file" class="form-control image-choose" id="imageUpload" multiple name="images[]">
                     </div>
                 </div>
                 <div class="d-flex justify-content-center mt-5">

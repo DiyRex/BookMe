@@ -5,6 +5,7 @@
   border-radius: 10px;
   padding: 12px 20px 12px 20px;
   font-weight: 500;
+  font-size: 1rem;
 }
 
 .btn-edit,
@@ -51,9 +52,11 @@
     height: 12px;
 }
 
+
 @media (max-width: 480px) {
     .main-title{
         font-size: 2rem;
+        margin-bottom: 30px;
     }
   .title {
     font-size: 14px;
@@ -75,7 +78,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 5px;
     width: 70% !important;
+  }
+  .status-d{
+    font-size: 12px;
   }
   .rent-d p {
     margin-top: 8px;
@@ -115,8 +122,9 @@
   background-color: #004b23;
   color: white;
   border-radius: 10px;
-  padding: 8px 15px 8px 15px;
+  padding: 10px 15px 10px 15px;
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  margin-top: 200px !important;
 }
 }
