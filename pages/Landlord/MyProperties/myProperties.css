@@ -1,0 +1,122 @@
+.btn-add {
+  background-color: #004b23;
+  text-decoration: none;
+  color: white !important;
+  border-radius: 10px;
+  padding: 12px 20px 12px 20px;
+  font-weight: 500;
+}
+
+.btn-edit,
+.btn-delete {
+  width: 80px;
+  border-radius: 10px;
+  margin-left: 10px;
+  height: 40px;
+  border-color: transparent;
+  color: white;
+}
+
+.btn-edit {
+  background-color: #004b23;
+}
+.btn-delete {
+  background-color: #ff0000;
+}
+
+.card {
+  border: none !important;
+}
+.card-single {
+  border: 1px solid black;
+  padding: 10px;
+}
+.rent {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: center;
+  gap: 20px;
+  width: 50% !important;
+  line-height: 0.5;
+}
+
+.count {
+  width: 50%;
+  margin-left: 20px;
+}
+
+.bed, .student {
+    margin-top: 0.9rem;
+    height: 12px;
+}
+
+@media (max-width: 480px) {
+    .main-title{
+        font-size: 2rem;
+    }
+  .title {
+    font-size: 14px;
+    width: 120%;
+  }
+  .address {
+    font-size: 12px;
+  }
+  .description {
+    display: none;
+    padding-left: 5px !important;
+    width: 60% !important;
+    font-size: 13px;
+    height: 50%;
+    overflow-y: scroll;
+  }
+  .rent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70% !important;
+  }
+  .rent-d p {
+    margin-top: 8px;
+    font-size: 12px;
+    height: 5px;
+    line-height: 0;
+  }
+
+  .btn-edit,
+  .btn-delete {
+    width: 60px;
+    font-size: 13px;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin-left: 10px;
+    height: 30px;
+    border-color: transparent;
+    color: white;
+  }
+  .count {
+    margin-top: 16px;
+    height: 20% !important;
+  }
+  .card-single {
+    height: auto;
+  }
+  .drop-container {
+    width: 30% !important;
+    display: flex !important;
+    align-items: start !important;
+    justify-content: start !important;
+  }
+  .bed {
+    height: 12px;
+  }
+  .btn-add {
+  background-color: #004b23;
+  color: white;
+  border-radius: 10px;
+  padding: 8px 15px 8px 15px;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+}

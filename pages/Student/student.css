@@ -1,0 +1,114 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.img1{
+    width: 50%;
+    height: 200px;
+    background-color: pink;
+    border: 2px solid black;
+    background-image: url(https://images.pexels.com/photos/7031408/pexels-photo-7031408.jpeg?auto=compress&cs=tinysrgb&w=600);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.img2{
+    width: 50%;
+    height: 200px;
+    background-color: pink;
+    border: 2px solid black;
+    background-image: url(https://images.pexels.com/photos/7031406/pexels-photo-7031406.jpeg?auto=compress&cs=tinysrgb&w=600);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+} 
+
+.card-container{
+    border-radius: 10px;
+}
+
+.btn-book, .btn-contact{
+    width: 130px;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    margin-top: 50px;
+}
+
+.btn-book{
+    background-color: #004B23;
+}
+.btn-contact{
+    background-color: #38B000;
+}
+.card-container{
+    -webkit-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.49);
+    -moz-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.49);
+    box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.49);
+}
+.size{
+    font-size: 2rem;
+}
+
+.main-container{
+    width: 75% !important;
+}
+
+.h4-tag{
+    font-size: 1rem;
+    text-align: center;
+}
+.h3-tag{
+    font-size: 1.2rem;
+}
+.h5-tag{
+    font-size: 1rem;
+}
+
+@media (max-width: 480px) {
+    .main-container{
+        width: 100% !important;
+    }
+    .img1, .img2{
+        height: 100px;
+    }
+    #map{
+        height: 300px !important;
+        width: 90% !important;
+    }
+    .h4-tag{
+        font-size: 0.7rem;
+        text-align: center;
+    }
+    .h3-tag{
+        font-size: 1rem;
+    }
+    .h5-tag{
+        font-size: 0.8rem;
+    }
+    .btn-book, .btn-contact{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    color: white;
+    font-size: 0.8rem;
+    border: none;
+    margin-top: 3px;
+}
+
+.size{
+    font-size: 1.2rem;
+}
+
+.mtitle{
+    margin-top: 10px;
+    font-size: 1.3rem;
+}
+.card-container{
+    width: 95%;
+}
+
+}

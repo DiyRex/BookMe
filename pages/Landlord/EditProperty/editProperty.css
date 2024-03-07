@@ -1,0 +1,55 @@
+
+.box{
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 40px;
+    background-color: #004B23;
+}
+
+.title{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.btn-publish{
+    font-weight: bold;
+    font-size: 1.1rem;
+    background-color: #38B000;
+    border-radius: 19px;
+    color: white;
+    width: 119px;
+    height: 39px;
+    border: none;
+    outline: none;
+}
+
+.map-section{
+    height: 500px;
+    width: auto;
+}
+
+
+@media (max-width: 480px) {
+    .title{
+        font-size: 30px;
+        margin-top: 15%;
+        margin-bottom: 25px;
+    }
+    .map-section{
+        height: 300px;
+        width: auto;
+    }
+}
+
+@media (min-width: 480px){
+    
+    .box{
+         padding-left: 50px !important;
+         padding-right: 50px !important;
+         margin-top: 5%;
+    }
+    .title{
+        margin-top: 5%;
+    }
+}
