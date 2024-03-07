@@ -10,7 +10,7 @@ if(isset($_SESSION['role'])){
     $Role = $_SESSION['role'];
     if($Role === "Student"){
         if ($_SERVER['REQUEST_METHOD'] === "GET") {
-            $query = "SELECT Coordinates FROM posts";
+            $query = "SELECT Coordinates FROM property";
             $stmt = $mysqli->prepare($query);
             $stmt->execute();
             $result = $stmt->get_result();

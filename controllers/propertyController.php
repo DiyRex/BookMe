@@ -14,14 +14,14 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $ownerID = $_SESSION['user_id'];
     $status = "Pending";
 
-    $query = "INSERT INTO properties (Title, Description, Address, StdCount, BedCount, Rent, Keymoney, Coordinates, Status, OwnerID)
-              VALUES(?,?,?,?,?,?,?,?,?)";
+    $query = "INSERT INTO property (Title, Description, Address, StdCount, BedCount, Rent, Keymoney, Coordinates, Status, OwnerID)
+              VALUES(?,?,?,?,?,?,?,?,?,?)";
     $stmt = $mysqli->prepare($query);
-    $stmt->bind_param("sssiiiisi", $title, $description, $address, $studentCount, $bedCount, $rent, $keymoney, $coordinates, $status, $$ownerID);
+    $stmt->bind_param("sssiissssi", $title, $description, $address, $studentCount, $bedCount, $rent, $keymoney, $coordinates, $status, $ownerID);
     $stmt->execute();
     $stmt->close();
-
-    echo $coordinates;
+    header('Location: /explore');
+    // echo $coordinates;
 }else if ($_SERVER['REQUEST_METHOD'] === "GET") {
     if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true) {
         if (isset($_SESSION['role']) && $_SESSION['role'] == "Landlord") {
