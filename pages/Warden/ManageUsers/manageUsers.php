@@ -91,7 +91,7 @@ include_once './controllers/userController.php';
                                 <tr>
                                 <td>" . htmlspecialchars($user['UserID']) . "</td>
                                 <td>" . htmlspecialchars($user['Name']) . "</td>
-                                <td>" . htmlspecialchars($user['email']) . "</td>
+                                <td>" . htmlspecialchars($user['Email']) . "</td>
                                 <td>" . htmlspecialchars($user['ContactNo']) . "</td>
                                 <td>" . htmlspecialchars($user['Role']) . "</td>
                                 <td>" . $deletebtn . "</td>

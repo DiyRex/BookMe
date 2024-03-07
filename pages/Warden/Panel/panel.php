@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Management Dashboard</title>
+    <link rel="stylesheet" href="./components/navbar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -29,7 +30,7 @@
 </head>
 
 <body>
-
+<?php include_once './components/navbar.php';?>
     <div class="container text-center mt-5">
         <h2>Welcome to the Management Dashboard</h2>
         <p>Select an option below to proceed:</p>
@@ -43,11 +44,10 @@
                 <button type="submit" class="btn btn-custom btn-manage-users">Manage Users</button>
             </form>
 
-
-            <form action="/explore" method="get" class="d-inline">
+            <!-- <form action="/explore" method="get" class="d-inline">
                 <input type="hidden" name="action" value="pendingProperties">
                 <button type="submit" class="btn btn-custom btn-pending-properties">Pending Properties</button>
-            </form>
+            </form> -->
         </div>
     </div>
 

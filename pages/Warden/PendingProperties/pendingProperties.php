@@ -68,29 +68,11 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Warden") {
                                 <th scope="col">Bed Count</th>
                                 <th scope="col">Keymoney</th>
                                 <th scope="col">Rent</th>
+                                <th scope="col">Status</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php
-                            
-                            // $pendingProperties = fetchProperty();
-                            // foreach ($pendingProperties as $property) {
-                            //     $actions = "<a class='btn btn-success btn-sm text-white approve-btn'><i class='fa-solid fa-check'></i> Approve</a> <a class='btn btn-danger btn-sm text-white reject-btn'><i class='fa-solid fa-times'></i> Reject</a>";
-                            //     echo "
-                            //     <tr>
-                            //     <td>" . htmlspecialchars($property['PropertyID']) . "</td>
-                            //     <td>" . htmlspecialchars($property['Title']) . "</td>
-                            //     <td>" . htmlspecialchars($property['Owner']) . "</td>
-                            //     <td>" . htmlspecialchars($property['BedCount']) . "</td>
-                            //     <td>" . htmlspecialchars($property['Keymoney']) . "</td>
-                            //     <td>" . htmlspecialchars($property['Rent']) . "</td>
-                            //     <td>" . $actions . "</td>
-                            //     </tr>
-                            //     ";
-                            // }
-                            ?>
-
                         </tbody>
                     </table>
                 </div>
