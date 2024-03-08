@@ -183,9 +183,6 @@
         imageContainer.querySelector('input[type="hidden"]').value = '1';
         // Optionally, visually indicate that the image is marked for deletion
         imageContainer.style.opacity = '0.5';
-        
-        // TODO: Here, you would also send an AJAX request to your server to delete the image file
-        // and its database entry based on its path or a unique identifier.
     }
 </script>
 

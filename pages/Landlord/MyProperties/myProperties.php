@@ -43,9 +43,9 @@
                 <div class="property-section col-12 d-flex mt-2">
                 <div class="card col-12 mt-3 d-flex">
                     <div class="card-single d-flex justify-content-between mb-2 border-secondary border-2">
-                        <div class="title-section">
+                        <div class="title-section w-25">
                         <h5 class="title">$title</h5>
-                            <h6 class="address">$address</h6>
+                            <h6 class="address w-75">$address</h6>
                         </div>
                         <div class="d-md-flex drop-container">
                             <div class="description mx-2 w-75">
