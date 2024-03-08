@@ -36,15 +36,37 @@ if(isset($_SESSION['role'])){
         }
     } else if ($Role === "Warden") {
         if ($_SERVER['REQUEST_METHOD'] === "GET") {
-            if (isset($_GET['action']) == "propertyManage") {
+            $query = "SELECT PropertyID, Coordinates FROM property";
+            $stmt = $mysqli->prepare($query);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $coordinates = [];
+
+            while ($row = $result->fetch_assoc()) {
+                $coords = explode(',', $row['Coordinates']);
+                if (count($coords) == 2) {
+                    $coordinates[] = [
+                        'id' => $row['PropertyID'],
+                        'lat' => (float)$coords[0],
+                        'lng' => (float)$coords[1]];
+                }
+            }
+            $coordinatesJson = json_encode($coordinates);
+            include './pages/Warden/ManageProperties/manageProperties.php';
+        }
+    }
+    }else if ($Role === "Admin") {
+        if ($_SERVER['REQUEST_METHOD'] === "GET") {
+            if ($_GET['action'] == "propertyManage") {
                 include './pages/Warden/ManageProperties/manageProperties.php';
-            } else if (isset($_GET['action']) == "manageUsers") {
+            } else if ($_GET['action'] == "manageUsers") {
                 include './pages/Warden/ManageUsers/manageUsers.php';
+            } else if ($_GET['action'] == "pendingProperties") {
+                include './pages/Warden/PendingProperties/pendingProperties.php';
             } else {
                 include './pages/Warden/Panel/panel.php';
             }
         }
-    }
     }
    
         // if ($_SERVER['REQUEST_METHOD'] === "GET") {

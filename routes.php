@@ -8,4 +8,7 @@ $routes = [
     "/addProperty" => "controllers/propertyController.php",
     "/edit" => "controllers/propertyController.php",
     "/deleteProperty" => "controllers/deleteController.php",
+    "/acceptProperty" => "controllers/wardenController.php",
+    "/rejectProperty" => "controllers/wardenController.php",
+    "/suspendProperty" => "controllers/wardenController.php",
 ];

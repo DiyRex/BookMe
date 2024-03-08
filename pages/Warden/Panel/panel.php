@@ -17,22 +17,22 @@
 
         .btn-manage-users {
             background-color: #007bff;
+            width: 180px;
         }
 
         .btn-manage-properties {
             background-color: #28a745;
+            width: 180px;
         }
 
-        .btn-pending-properties {
-            background-color: #dc3545;
-        }
     </style>
 </head>
 
 <body>
 <?php include_once './components/navbar.php';?>
     <div class="container text-center mt-5">
-        <h2>Welcome to the Management Dashboard</h2>
+        <h2 class="mb-2">Hello, Admin !</h2>
+        <h4 class="mt-3">Welcome to the Management Dashboard</h2>
         <p>Select an option below to proceed:</p>
         <div class="mt-4">
             <form action="/explore" method="get" class="d-inline">

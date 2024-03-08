@@ -30,7 +30,7 @@ function fetchprops()
 }
 
 function fetchPropsByID($id){
-    if (isset($_SESSION['loggedin']) && $_SESSION['role'] == "Landlord") {
+    if (isset($_SESSION['loggedin']) && ($_SESSION['role'] == "Landlord" || $_SESSION['role'] == "Warden") ) {
         global $mysqli;
         $id = $mysqli->real_escape_string($id);
         $query = "SELECT * FROM property WHERE PropertyID=?";
@@ -70,7 +70,7 @@ function fetchPropsByID($id){
 }
 
 function fetchPropImagesByID($id){
-    if (isset($_SESSION['loggedin']) && $_SESSION['role'] == "Landlord") {
+    if (isset($_SESSION['loggedin']) && ($_SESSION['role'] == "Landlord" || $_SESSION['role'] == "Warden")) {
         global $mysqli;
         $id = $mysqli->real_escape_string($id);
         $query = "SELECT * FROM images WHERE PropertyID=?";
@@ -87,7 +87,9 @@ function fetchPropImagesByID($id){
         }
 
         $stmt->close();
-        return $images;
+        if(isset($images)){
+            return $images;
+        }
     } else {
         return null;
     }
