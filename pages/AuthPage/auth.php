@@ -99,6 +99,7 @@
                 <option value=1>Student</option>
                 <option value=2>Landlord</option>
                 <option value=3>Warden</option>
+                <option value=4>Admin</option>
               </select>
             </div>
           </div>
@@ -126,6 +127,19 @@
                   <div class="input-group-text"><i class="fa-solid fa-id-card" style="color: #38B000;"></i></div>
                 </div>
                 <input type="text" class="form-control" id="inputUniID" name="uniID" placeholder="University ID">
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <!-- Admin only -->
+          <div id="adminOnly" class="d-none">
+            <div class="form-group">
+              <label for="inputEmail">Authkey</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa-solid fa-key" style="color: #38B000;"></i></div>
+                </div>
+                <input type="text" class="form-control" id="authkey" name="authkey" placeholder="Authkey">
               </div>
             </div>
           </div>
@@ -182,6 +196,26 @@
       var uniID = document.getElementById('inputUniID');
       degDur.required = state;
       uniID.required = state;
+    }
+    // admin only
+    var role = document.getElementById('roleSelect');
+    role.addEventListener('change', function() {
+      var selectedRole = role.value;
+      if (selectedRole == 4) {
+        document.getElementById('adminOnly').classList.remove('d-none');
+        document.getElementById('adminOnly').classList.add('d-block');
+        makeInputRequired(true);
+      } else {
+        document.getElementById('adminOnly').classList.remove('d-block');
+        document.getElementById('adminOnly').classList.add('d-none');
+        makeInputRequired(false);
+      }
+    })
+
+    //make Student only inputs required
+    const makeaInputRequired = (state) => {
+      var authkey = document.getElementById('authkey');
+      authkey.required = state;
     }
 
 

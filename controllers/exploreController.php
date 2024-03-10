@@ -54,19 +54,28 @@ if(isset($_SESSION['role'])){
             $coordinatesJson = json_encode($coordinates);
             include './pages/Warden/ManageProperties/manageProperties.php';
         }
-    }
     }else if ($Role === "Admin") {
         if ($_SERVER['REQUEST_METHOD'] === "GET") {
-            if ($_GET['action'] == "propertyManage") {
-                include './pages/Warden/ManageProperties/manageProperties.php';
-            } else if ($_GET['action'] == "manageUsers") {
-                include './pages/Warden/ManageUsers/manageUsers.php';
-            } else if ($_GET['action'] == "pendingProperties") {
-                include './pages/Warden/PendingProperties/pendingProperties.php';
+            // Check if 'action' key exists in the $_GET array
+            if (isset($_GET['action'])) {
+                if ($_GET['action'] == "propertyManage") {
+                    include './pages/Admin/ManageProperties/manageProperties.php';
+                } else if ($_GET['action'] == "manageUsers") {
+                    include './pages/Admin/ManageUsers/manageUsers.php';
+                }else if ($_GET['action'] == "article") {
+                    include './pages/Admin/Article/MyArticles/myArticles.php';
+                } else {
+                    // If 'action' exists but does not match any condition above
+                    include './pages/Admin/Panel/panel.php';
+                }
             } else {
-                include './pages/Warden/Panel/panel.php';
+                // If 'action' key does not exist, include the default admin panel page
+                include './pages/Admin/Panel/panel.php';
             }
         }
+    }else{
+        
+    }
     }
    
         // if ($_SERVER['REQUEST_METHOD'] === "GET") {

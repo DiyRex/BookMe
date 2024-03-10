@@ -37,19 +37,14 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $role = (int) $_POST['role'];
         $signup_email = $_POST['signup_email'];
         $signup_password = $_POST['signup_password'];
-        if(isset($_POST['role']) && $_POST['role'] === "1"){
+        if (isset($_POST['role']) && $_POST['role'] === "1") {
             $degreeDuration = (int) $_POST['degreeDuration'];
             $uniID = $_POST['uniID'];
         }
-        if (isset($_POST['role']) && $_POST['role'] !== "1") {
-            $ins_query = "INSERT INTO user (Name, NIC, Address, ContactNo, Email, Password, RoleID) VALUES (?, ?, ?, ?, ?, ?, ?)";
-            $stmt = $mysqli->prepare($ins_query);
-            $stmt->bind_param("ssssssi",$name,$nic,$address,$contact,$signup_email,$signup_password,$role);
-            $stmt->execute();
-            $stmt->close();
-            header('Location: /auth');
-            exit;
-        }else if (isset($_POST['role']) && $_POST['role'] === "1") {
+        if (isset($_POST['role']) && $_POST['role'] === "4") {
+            $authkey = $_POST['authkey'];
+        }
+        if (isset($_POST['role']) && $_POST['role'] === "1") {
             $user_ins_query = "INSERT INTO user (Name, NIC, Address, ContactNo, Email, Password, RoleID) VALUES (?, ?, ?, ?, ?, ?, ?)";
             $student_ins_query = "INSERT INTO `student` (`UserID`, `DegDuration`, `UniID`) VALUES (?, ?, ?)";
             $stmt = $mysqli->prepare($user_ins_query);
@@ -65,12 +60,33 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $stmt->execute();
             $stmt->close();
             header('Location: /auth');
+        } else if (isset($_POST['role']) && $_POST['role'] === "4") {
+            if ($authkey === "BOARDME1234") {
+                $ins_query = "INSERT INTO user (Name, NIC, Address, ContactNo, Email, Password, RoleID) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                $stmt = $mysqli->prepare($ins_query);
+                $stmt->bind_param("ssssssi", $name, $nic, $address, $contact, $signup_email, $signup_password, $role);
+                $stmt->execute();
+                $stmt->close();
+                header('Location: /auth');
+                exit;
+            } else {
+                echo "invalid Authkey";
+                exit;
+            }
         }
+    } else if (isset($_POST['role']) && ($_POST['role'] !== "1" || $_POST['role'] !== "4")) {
+        $ins_query = "INSERT INTO user (Name, NIC, Address, ContactNo, Email, Password, RoleID) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $mysqli->prepare($ins_query);
+        $stmt->bind_param("ssssssi", $name, $nic, $address, $contact, $signup_email, $signup_password, $role);
+        $stmt->execute();
+        $stmt->close();
+        header('Location: /auth');
+        exit;
     }
 } else if ($_SERVER['REQUEST_METHOD'] === "GET") {
-    if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         header('Location: /');
-    }else{
+    } else {
         include './pages/AuthPage/auth.php';
     }
 }

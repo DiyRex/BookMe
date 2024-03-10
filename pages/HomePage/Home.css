@@ -46,11 +46,15 @@ body{
 }
 
 .btn-more-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    color: white !important;
     font-weight: bold;
     font-size: 1.1rem;
     background-color: #004B23;
     border-radius: 5px;
-    color: white;
     width: 8rem;
     height: 3rem;
     border: none;
@@ -58,6 +62,12 @@ body{
 }
 
 .btn-find-place{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white !important;
+    text-decoration: none !important;
+    font-weight: bold;
     font-weight: bold;
     font-size: 1.1rem;
     background-color: #38B000;

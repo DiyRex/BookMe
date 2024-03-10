@@ -1,3 +1,10 @@
+<?php
+@session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Admin") {
+    header('Location: /');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,6 +31,10 @@
             background-color: #28a745;
             width: 180px;
         }
+        .btn-article{
+            background-color: #a83238;
+            width: 180px;
+        }
 
     </style>
 </head>
@@ -42,6 +53,10 @@
             <form action="/explore" method="get" class="d-inline">
                 <input type="hidden" name="action" value="manageUsers">
                 <button type="submit" class="btn btn-custom btn-manage-users">Manage Users</button>
+            </form>
+            <form action="/explore" method="get" class="d-inline">
+                <input type="hidden" name="action" value="article">
+                <button type="submit" class="btn btn-custom btn-article">Articles</button>
             </form>
 
             <!-- <form action="/explore" method="get" class="d-inline">

@@ -27,7 +27,7 @@
         >
           <div class="d-flex flex-column align-items-md-center">
             <h2 class="title">
-              Hey <span style="color: #38b000">Students!</span>
+              Hey <span style="color: #38b000"><?= $_SESSION['role'] ?? 'Students' ?>!</span>
             </h2>
             <p class="desc text-center">
               Are you looking for some accommodation Until become an
@@ -37,8 +37,24 @@
             <div
               class="button-section d-flex flex-row align-items-center justify-content-center mt-2"
             >
-              <button class="btn-more-info">More Info</button>
-              <button class="mx-2 btn-find-place">Find A Place</button>
+            <?php
+            if(isset($_SESSION['role'])){
+              if($_SESSION['role'] == "Student"){
+                echo '<a href="/explore" class="btn-more-info">Find a Place</a>
+                <a class="mx-2 btn-find-place">More info</a>';
+              }else if($_SESSION['role'] == "Warden"){
+                echo '<a href="/explore" class="btn-more-info">Advertisements</a>
+                <a class="mx-2 btn-find-place">More info</a>';
+              }else if($_SESSION['role'] == "Admin"){
+                echo '<a href="/explore" class="btn-more-info">Dashboard</a>
+                <a href="/" class="mx-2 btn-find-place">More info</a>
+              ';
+              }
+            }else{
+              echo '<button class="btn-more-info">More Info</button>
+              <button class="mx-2 btn-find-place">Find A Place</button>';
+            }
+            ?>
             </div>
           <img
             class="hero-img-sm d-md-none"

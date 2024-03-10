@@ -1,10 +1,10 @@
 <?php
 @session_start();
-if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Warden") {
+if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Admin") {
     header('Location: /');
     exit;
 }
-include_once './controllers/userController.php';
+include_once './data/fetchUsers.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,7 +82,7 @@ include_once './controllers/userController.php';
                             $users = fetchUsers();
                             foreach ($users as $user) {
                                 $deletebtn;
-                                if (isset($user['Role']) && $user['Role'] !== "Warden") {
+                                if (isset($user['Role']) && $user['Role'] !== "Admin") {
                                     $deletebtn = "<a class='btn btn-danger btn-sm text-white'><i class='fa-solid fa-trash'></i></a>";
                                 } else {
                                     $deletebtn = "Restricted";
