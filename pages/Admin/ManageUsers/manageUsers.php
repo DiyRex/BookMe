@@ -4,7 +4,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Admin") {
     header('Location: /');
     exit;
 }
-include_once './data/fetchUsers.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,6 +78,7 @@ include_once './data/fetchUsers.php';
                         </thead>
                         <tbody>
                             <?php
+                            include_once './data/fetchUsers.php';
                             $users = fetchUsers();
                             foreach ($users as $user) {
                                 $deletebtn;
