@@ -5,7 +5,7 @@
 include_once __DIR__ . '/../helpers/dbConn.php';
 function fetchprops()
 {
-    if (isset($_SESSION['loggedin']) && ($_SESSION['role'] == "Warden" || $_SESSION['role'] == "Landlord" || $_SESSION['role'] == "Admin") ) {
+    if (isset($_SESSION['loggedin'])) {
         global $mysqli;
         $query = "SELECT property.PropertyID, property.Title, property.Description, property.Address, property.StdCount, property.BedCount, property.Rent, property.Keymoney, property.Status, user.Name 
         FROM property 
@@ -30,7 +30,7 @@ function fetchprops()
 }
 
 function fetchPropsByID($id){
-    if (isset($_SESSION['loggedin']) && ($_SESSION['role'] == "Landlord" || $_SESSION['role'] == "Warden" || $_SESSION['role'] == "Admin") ) {
+    if (isset($_SESSION['loggedin'])) {
         global $mysqli;
         $id = $mysqli->real_escape_string($id);
         $query = "SELECT * FROM property WHERE PropertyID=?";
@@ -70,7 +70,7 @@ function fetchPropsByID($id){
 }
 
 function fetchPropImagesByID($id){
-    if (isset($_SESSION['loggedin']) && ($_SESSION['role'] == "Landlord" || $_SESSION['role'] == "Warden" || $_SESSION['role'] == "Admin")) {
+    if (isset($_SESSION['loggedin'])) {
         global $mysqli;
         $id = $mysqli->real_escape_string($id);
         $query = "SELECT * FROM images WHERE PropertyID=?";

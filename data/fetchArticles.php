@@ -5,7 +5,7 @@
 include_once __DIR__ . '/../helpers/dbConn.php';
 function fetchArticles()
 {
-    if (isset($_SESSION['loggedin']) && $_SESSION['role'] == "Admin") {
+    if (isset($_SESSION['loggedin']) && ($_SESSION['role'] == "Admin" || $_SESSION['role'] == "Student")) {
         global $mysqli;
         $query = "SELECT articles.ArticleID, articles.Title, articles.Content, articles.Added, user.Name FROM articles INNER JOIN user ON articles.AuthorID = user.UserID";
         $stmt = $mysqli->prepare($query);

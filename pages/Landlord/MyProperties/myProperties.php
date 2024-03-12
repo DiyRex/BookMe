@@ -37,7 +37,7 @@
                 $rent = $property['Rent'];
                 $keymoney = $property['Keymoney'];
                 $address = $property['Address'];
-                $property['Status'] == "Pending" ? $status = "<span class='text-danger'>Pending</span>" : $status = "<span class='text-success'>Pending</span>";
+                $property['Status'] == "Pending" ? $status = "<span class='text-danger'>Pending</span>" : $status = "<span class='text-success'>Approved</span>";
                 echo 
 <<<EOT
                 <div class="property-section col-12 d-flex mt-2">

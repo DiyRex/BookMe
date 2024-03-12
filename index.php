@@ -1,5 +1,4 @@
 <?php
-include 'helpers/function.php';
 include 'routes.php';
 
 $uri =  $_SERVER['REQUEST_URI'];

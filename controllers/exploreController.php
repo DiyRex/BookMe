@@ -11,7 +11,7 @@ if(isset($_SESSION['role'])){
     $Role = $_SESSION['role'];
     if($Role === "Student"){
         if ($_SERVER['REQUEST_METHOD'] === "GET") {
-            $query = "SELECT PropertyID, Coordinates FROM property";
+            $query = "SELECT PropertyID, Coordinates FROM property WHERE Status = 'Approved'";
             $stmt = $mysqli->prepare($query);
             $stmt->execute();
             $result = $stmt->get_result();
@@ -26,7 +26,7 @@ if(isset($_SESSION['role'])){
                         'lng' => (float)$coords[1]];
                 }
             }
-            $coordinatesJson = json_encode($coordinates);
+            $std_coordinatesJson = json_encode($coordinates);
 
             include './pages/Student/student.php';
         }

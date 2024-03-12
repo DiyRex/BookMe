@@ -15,4 +15,5 @@ $routes = [
     "/publishArticle" => "controllers/adminController.php",
     "/writeArticle" => "controllers/adminController.php",
     "/editArticle" => "controllers/adminController.php",
+    "/articles" => "controllers/studentController.php",
 ];

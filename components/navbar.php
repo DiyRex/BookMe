@@ -1,6 +1,6 @@
 <?php
 @session_start();
-echo <<<EOT
+echo '
 <!-- Navbar -->   
     <nav class="navbar navbar-expand-lg navobj">
       <div class="col-3 col-md-5">
@@ -40,25 +40,35 @@ echo <<<EOT
           <li class="nav-item">
             <a class="nav-link text-white" href="/explore">Explore</a>
           </li>
+          
+';
+if (isset($_SESSION['role']) === "Student" && $_SESSION['loggedin'] == true) {
+  echo '<li class="nav-item">
+                  <a class="nav-link text-white" href="/articles">Articles</a>
+                </li>';
+}else{
+ 
+}
+echo '
           <li class="nav-item">
             <a class="nav-link text-white" href="#">Contact US</a>
           </li>
         </ul>
         
-EOT;
+';
 if (isset($_SESSION['email']) && $_SESSION['loggedin'] == true) {
   $email = $_SESSION['email'];
-  echo <<<EOT
+  echo '
   <div class="dropdown show">
-  <a class="btn btn-outline-success my-2 my-sm-0 text-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    $email
+  <a class="btn btn-outline-success bg-success  my-2 my-sm-0 text-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    ' . $email . '
   </a>
 
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
     <a class="dropdown-item" href="/logout">Logout</a>
   </div>
 </div>";
-EOT;
+';
 } else {
   echo '<a class="btn btn-outline-success my-2 my-sm-0 text-white" href="/auth" type="submit">Login/Signup</a>';
 }
