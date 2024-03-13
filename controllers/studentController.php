@@ -32,6 +32,8 @@ if($_SERVER['REQUEST_METHOD'] === "GET" && isset($_GET['prop_id'])){
     }
 }if($_SERVER['REQUEST_METHOD'] === "GET" && strpos($requestPath, '/article') !== false){
     include './pages/Student/Articles/articles.php';
+}else if($_SERVER['REQUEST_METHOD'] === "GET" && strpos($requestPath, '/mybookings') !== false){
+    include './pages/Student/MyBookings/myBookings.php';
 }
 else{
     //header('Location: /explore');

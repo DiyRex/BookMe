@@ -42,12 +42,14 @@ echo '
           </li>
           
 ';
-if (isset($_SESSION['role']) === "Student" && $_SESSION['loggedin'] == true) {
+if ($_SESSION['role'] === 'Student' && $_SESSION['loggedin'] === true) {
   echo '<li class="nav-item">
-                  <a class="nav-link text-white" href="/articles">Articles</a>
-                </li>';
-}else{
- 
+                          <a class="nav-link text-white" href="/articles">Articles</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-white" href="/mybookings">My Bookings</a>
+                        </li>';
+} else {
 }
 echo '
           <li class="nav-item">

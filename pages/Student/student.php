@@ -56,7 +56,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Student"){
         <h2 class="text-center mt-md-4 mb-5"><i class="fa-solid fa-location-dot"></i> Explore <span style="color: #38b000">Boardings</span></h2>
         <div class="row">
             <div class="col-lg-8 mb-4 map-container">
-                <div id="map" style="height: 530px; width: 100%;"></div>
+                <div id="map" style="height: 800px; width: 100%;"></div>
             </div>
             <div class="col-lg-4">
                 <div class="card">
@@ -102,7 +102,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Student"){
         </div>
     </div>
 
-    <div class="mt-5" >
+    <div class="flex-1" >
         <?php include_once './components/footer.php';?>
     </div>
 
