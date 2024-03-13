@@ -20,9 +20,9 @@ echo <<<EOT
       <!-- Second Column -->
       <div class="col-md-3 px-5 mt-2 mt-md-0 px-md-0">
         <nav class="nav flex-column">
-          <a class="nav-link text-light p-0" href="#">Home</a>
+          <a class="nav-link text-light p-0" href="/">Home</a>
           <a class="nav-link text-light p-0" href="#">Privacy</a>
-          <a class="nav-link text-light p-0" href="#">Explore</a>
+          <a class="nav-link text-light p-0" href="/explore">Explore</a>
         </nav>
       </div>
       <!-- Third Column -->

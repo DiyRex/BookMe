@@ -145,6 +145,31 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && $_SERVER['REQUEST_URI'] === '/addPr
             header('Location: /');
         }
     }
+}else if($_SERVER['REQUEST_METHOD'] === "GET" && isset($_GET['prop_id'])&& strpos($requestPath, '/getProperty') !== false){
+    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true) {
+        if (isset($_SESSION['role']) && $_SESSION['role'] == "Student") {
+            include __DIR__ .'/../data/fetchProperties.php';
+            header('Content-Type: application/json');
+            if(isset($_GET['prop_id'])) {
+                $property = fetchPropsByID($_GET['prop_id']);
+                $images = fetchPropImagesByID($_GET['prop_id']);
+                if(isset($images)){
+                    $response = [
+                        'property' => $property,
+                        'images' => $images
+                    ];
+                }else{
+                    $response = [
+                        'property' => $property,
+                        'images' => null
+                    ];
+                }
+                echo json_encode($response);
+            } else {
+                echo json_encode(['error' => 'Property ID not provided.']);
+            }
+        }
+    }
 }else{
     header('Location: /explore');
 }

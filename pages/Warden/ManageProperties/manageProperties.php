@@ -50,7 +50,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Warden") {
         <h2 class="text-center mt-md-4 mb-5"><i class="fa-solid fa-location-dot"></i> Manage <span style="color: #38b000">Properties</span></h2>
         <div class="row">
             <div class="col-lg-8 mb-4">
-                <div id="map" style="height: 550px;"></div>
+                <div id="map" style="height: 800px;"></div>
             </div>
             <div class="col-lg-4">
                 <div class="card">

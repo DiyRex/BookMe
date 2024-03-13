@@ -57,7 +57,7 @@
                 echo '<a href="/explore" class="btn-more-info">Find a Place</a>
                 <a class="mx-2 btn-find-place">More info</a>';
               }else if($_SESSION['role'] == "Warden"){
-                echo '<a href="/explore" class="btn-more-info">Advertisements</a>
+                echo '<a href="/explore" class="btn-more-info">Properties</a>
                 <a class="mx-2 btn-find-place">More info</a>';
               }else if($_SESSION['role'] == "Admin"){
                 echo '<a href="/explore" class="btn-more-info">Dashboard</a>
@@ -65,8 +65,8 @@
               ';
               }
             }else{
-              echo '<button class="btn-more-info">More Info</button>
-              <button class="mx-2 btn-find-place">Find A Place</button>';
+              echo '<a href="/explore" class="btn-more-info">Find a Place</a>
+                <a class="mx-2 btn-find-place">More info</a>';
             }
             ?>
             </div>

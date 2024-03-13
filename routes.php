@@ -6,6 +6,7 @@ $routes = [
     "/explore" => "controllers/exploreController.php",
     "/logout" => "controllers/logout.php",
     "/addProperty" => "controllers/propertyController.php",
+    "/getProperty" => "controllers/propertyController.php",
     "/edit" => "controllers/propertyController.php",
     "/deleteProperty" => "controllers/deleteController.php",
     "/deleteBooking" => "controllers/deleteController.php",
@@ -19,5 +20,6 @@ $routes = [
     "/articles" => "controllers/studentController.php",
     "/mybookings" => "controllers/studentController.php",
     "/bookings" => "controllers/propertyController.php",
+    "/addBooking" => "controllers/studentController.php",
     "/notFound" => "pages/404/404.php",
 ];

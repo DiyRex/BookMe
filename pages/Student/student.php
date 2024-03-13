@@ -54,6 +54,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Student"){
 <?php include_once './components/navbar.php'; ?>
     <div class="container mt-4">
         <h2 class="text-center mt-md-4 mb-5"><i class="fa-solid fa-location-dot"></i> Explore <span style="color: #38b000">Boardings</span></h2>
+        <div id="alert-placeholder"></div>
         <div class="row">
             <div class="col-lg-8 mb-4 map-container">
                 <div id="map" style="height: 800px; width: 100%;"></div>
@@ -123,10 +124,10 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Student"){
             coordinates.forEach(function(coord) {
                 var marker = L.marker([coord.lat, coord.lng]).addTo(map);
                 marker.on('click', function() {
-                    fetch('controllers/studentController.php?prop_id=' + coord.id)
+                    fetch('/getProperty?prop_id=' + coord.id)
                         .then(response => response.json())
                         .then(data => {
-                          console.log(data);
+
                             // Assuming data contains 'Title', 'Description', etc.
                             // Update the #property-details container with the fetched data
                             document.getElementById('card-title').innerHTML = '';
@@ -169,9 +170,11 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Student"){
                             // Check status and update buttons
                             const actionButtons = document.getElementById('action-buttons');
                             actionButtons.innerHTML = `
-                                    <a href="/bookProperty?id=${data.property.PropertyID}" class="btn btn-success btn-half-width" role="button">Book Now</a>
+                                    <button onclick="addBooking(${data.property.PropertyID})" class="btn btn-success btn-half-width" role="button">Book Now</button>
                                     <a href="/contact?id=${data.property.PropertyID}" class="btn btn-danger btn-half-width" role="button">Contact Now</a>
                                 `;
+                                
+
                         })
                         .catch(error => {
                             console.error('Error fetching property details:', error);
@@ -179,11 +182,44 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Student"){
                             document.getElementById('property-details').innerHTML = '<p>Error loading property details.</p>';
                         });
                 });
-            });
+            }); 
         });
+        function addBooking(id) {
+          $.ajax({
+        url: `/addBooking?prop_id=${id}`,
+        type: 'GET',
+        success: function(response) {
+            // Assuming the server responds with a success message
+            showSuccessAlert(); // Customize this message as needed
+        },
+        error: function(xhr, status, error) {
+            // Handle errors here
+            console.error('Error occurred:', error);
+        }
+    });
+          }
+
+          function showSuccessAlert() {
+              const alertPlaceholder = document.getElementById('alert-placeholder');
+              const alert = `<div class="alert alert-success alert-dismissible fade show" role="alert">
+                  Booking Added Successfully!
+              </div>`;
+
+              alertPlaceholder.innerHTML = alert;
+              setTimeout(function() {
+        // This will fade out the alert by reducing its opacity to 0 over 1 second
+        const alertElement = alertPlaceholder.querySelector('.alert');
+        if (alertElement) {
+            alertElement.style.transition = 'opacity 1s ease';
+            alertElement.style.opacity = '0';
+            // After the fade-out transition is done, remove the alert from the DOM
+            setTimeout(() => alertElement.remove(), 1000);
+        }
+    }, 3000);
+          }
     </script>
     <!-- Import Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
 </body>
