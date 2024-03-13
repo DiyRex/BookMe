@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === "GET" && isset($_GET['id']) && strpos($reques
     }
 }else if ($_SERVER['REQUEST_METHOD'] === "GET" && isset($_GET['id']) && strpos($requestPath, '/deleteBooking') !== false){
     if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true) {
-        if (isset($_SESSION['role']) && $_SESSION['role'] == "Student") {
+        if (isset($_SESSION['role']) && ($_SESSION['role'] == "Student" || $_SESSION['role'] == "Landlord")) {
             $id = $_GET['id'];
             $query = "DELETE FROM booking WHERE BookingID=?";
             $stmt = $mysqli->prepare($query);

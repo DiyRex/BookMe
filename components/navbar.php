@@ -42,12 +42,16 @@ echo '
           </li>
           
 ';
-if ($_SESSION['role'] === 'Student' && $_SESSION['loggedin'] === true) {
+if (isset($_SESSION['role']) && $_SESSION['role'] === 'Student' && $_SESSION['loggedin'] === true) {
   echo '<li class="nav-item">
                           <a class="nav-link text-white" href="/articles">Articles</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link text-white" href="/mybookings">My Bookings</a>
+                        </li>';
+}else if (isset($_SESSION['role']) && $_SESSION['role'] === 'Landlord' && $_SESSION['loggedin'] === true) {
+  echo ' <li class="nav-item">
+                          <a class="nav-link text-white" href="/bookings">My Bookings</a>
                         </li>';
 } else {
 }
@@ -69,7 +73,7 @@ if (isset($_SESSION['email']) && $_SESSION['loggedin'] == true) {
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
     <a class="dropdown-item" href="/logout">Logout</a>
   </div>
-</div>";
+</div>"
 ';
 } else {
   echo '<a class="btn btn-outline-success my-2 my-sm-0 text-white" href="/auth" type="submit">Login/Signup</a>';

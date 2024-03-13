@@ -1,12 +1,12 @@
 <?php
 @session_start();
-if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Student") {
+if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Landlord") {
     header('Location: /');
     exit;
 }
 include_once './data/fetchBooking.php';
 $stdID = $_SESSION['user_id'];
-$bookings = fetchStdBookingsByID($stdID);
+$bookings = fetchLndBookingsByID($stdID);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,15 +72,15 @@ $bookings = fetchStdBookingsByID($stdID);
                         </thead>
                         <tbody>
                             <?php
-                            if(isset($bookings)){
-                            foreach ($bookings as $booking) {
+                                if(isset($bookings)){
+                                foreach ($bookings as $booking) {
                                 $bookingID = $booking['BookingID'];
                                 $deletebtn = "<a href='/deleteBooking?id=$bookingID' class='btn btn-danger btn-sm text-white'><i class='fa-solid fa-trash'></i></a>";
                                 echo "
                                 <tr>
                                 <td>" . htmlspecialchars($booking['BookingID']) . "</td>
                                 <td>" . htmlspecialchars($booking['Title']) . "</td>
-                                <td>" . htmlspecialchars($booking['OwnerName']) . "</td>
+                                <td>" . htmlspecialchars($booking['StudentName']) . "</td>
                                 <td>" . htmlspecialchars($booking['ContactNo']) . "</td>
                                 <td>" . htmlspecialchars($booking['BookingDate']) . "</td>
                                 <td>" . $deletebtn . "</td>
@@ -91,6 +91,7 @@ $bookings = fetchStdBookingsByID($stdID);
                                 No data found.
                             </div>';
                             }
+                            
                             ?>
 
                         </tbody>

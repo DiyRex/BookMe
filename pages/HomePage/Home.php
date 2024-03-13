@@ -30,8 +30,22 @@
               Hey <span style="color: #38b000"><?= $_SESSION['role'] ?? 'Students' ?>!</span>
             </h2>
             <p class="desc text-center">
-              Are you looking for some accommodation Until become an
-              undergraduate.
+              <?php
+               if(isset($_SESSION['role'])){
+                if($_SESSION['role'] == "Student"){
+                  echo '<h4> Are you looking for some accommodation Until become an
+                  undergraduate.</h4>';
+                }else if($_SESSION['role'] == "Landlord"){
+                  echo '<h4> Are you looking somewhere to post your accomodation advertisements.</h4>';
+                }else if($_SESSION['role'] == "Warden"){
+                  echo '<h4> Arrange better accomodations for students.</h4>';
+                }
+               }else{
+                echo '<h4> Are you looking for some accommodation Until become an
+                  undergraduate.</h4>';
+               }
+              ?>
+             
             </p>
           </div>
             <div

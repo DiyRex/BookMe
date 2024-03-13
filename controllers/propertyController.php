@@ -2,6 +2,9 @@
 @session_start();
 include_once __DIR__ . '/../helpers/dbConn.php';
 
+$requestUri = $_SERVER['REQUEST_URI'];
+$requestPath = parse_url($requestUri, PHP_URL_PATH);
+
 if ($_SERVER['REQUEST_METHOD'] === "POST" && $_SERVER['REQUEST_URI'] === '/addProperty') {
     $title = $_POST['title'];
     $description = $_POST['description'];
@@ -118,10 +121,18 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && $_SERVER['REQUEST_URI'] === '/addPr
 
     header('Location: /explore');
 
-}else if ($_SERVER['REQUEST_METHOD'] === "GET" && !isset($_GET['id']) && $_SERVER['REQUEST_URI'] != '/edit') {
+}else if ($_SERVER['REQUEST_METHOD'] === "GET" && !isset($_GET['id']) && strpos($requestPath, '/addProperty') !== false) {
     if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true) {
         if (isset($_SESSION['role']) && $_SESSION['role'] == "Landlord") {
             include './pages/Landlord/AddProperty/addProperty.php';
+        } else {
+            header('Location: /');
+        }
+    }
+}else if ($_SERVER['REQUEST_METHOD'] === "GET" && !isset($_GET['id']) && strpos($requestPath, '/bookings') !== false) {
+    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true) {
+        if (isset($_SESSION['role']) && $_SESSION['role'] == "Landlord") {
+            include './pages/Landlord/Bookings/bookings.php';
         } else {
             header('Location: /');
         }

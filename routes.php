@@ -18,5 +18,6 @@ $routes = [
     "/editArticle" => "controllers/adminController.php",
     "/articles" => "controllers/studentController.php",
     "/mybookings" => "controllers/studentController.php",
+    "/bookings" => "controllers/propertyController.php",
     "/notFound" => "pages/404/404.php",
 ];
