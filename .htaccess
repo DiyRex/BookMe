@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /
+
+# If the requested filename exists as a directory or a file, don't do anything
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# If the above conditions are met, then rewrite the request to index.php
+RewriteRule ^ index.php [QSA,L]
