@@ -1,0 +1,79 @@
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.site-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.site-content {
+    flex: 1;
+}
+
+
+.box {
+    width: 50%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 40px;
+    background-color: #004B23;
+    color: white; /* Ensure text inside .box is visible */
+}
+
+.title {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.foot {
+    width: 100%;
+    /* Your footer styling here */
+    margin-top: 20px;
+    background-color: #f8f9fa; /* Example footer background color */
+    text-align: center; /* Example footer text alignment */
+}
+
+/* Additional styling */
+.btn-login {
+    font-weight: bold;
+    font-size: 1.1rem;
+    background-color: #38B000;
+    border-radius: 19px;
+    color: white;
+    width: 119px;
+    height: 39px;
+    border: none;
+    outline: none;
+}
+
+.HoverSwitch:hover {
+    border-bottom: 1px solid rgb(70, 247, 70);
+    color: rgb(70, 247, 70) !important;
+}
+
+@media (max-width: 480px) {
+    .title {
+        margin-top: 15%;
+        margin-bottom: 25px;
+    }
+}
+
+@media (min-width: 480px) {
+    .box {
+        padding-left: 50px !important;
+        padding-right: 50px !important;
+        margin-top: 5%;
+    }
+    .title {
+        margin-top: 5%;
+    }
+}

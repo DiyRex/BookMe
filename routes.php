@@ -15,6 +15,7 @@ $routes = [
     "/acceptProperty" => "controllers/wardenController.php",
     "/rejectProperty" => "controllers/wardenController.php",
     "/suspendProperty" => "controllers/wardenController.php",
+    "/addUsers" => "controllers/adminController.php",
     "/publishArticle" => "controllers/adminController.php",
     "/writeArticle" => "controllers/adminController.php",
     "/editArticle" => "controllers/adminController.php",

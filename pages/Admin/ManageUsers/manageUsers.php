@@ -55,7 +55,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Admin") {
                     <input type="text" class="form-control" id="searchInput" placeholder="Search by name..." onkeyup="searchName()">
                 </div>
                 <div class="filter mb-3 dropdown">
-                    <select class="form-select btn btn-secondary dropdown-toggle" style="background-color: #004B23;" id="roleFilter" onchange="filterRole()">
+                    <a type="button" href="/addUsers" class="btn btn-primary px-3"><i class="fa-solid fa-user-plus"></i> Add User</a>
+                    <select class="mx-4 form-select btn btn-secondary dropdown-toggle" style="background-color: #004B23;" id="roleFilter" onchange="filterRole()">
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <option class="text-left" value="">Filter by Role</option>
                             <option class="text-left" value="Student">Student</option>

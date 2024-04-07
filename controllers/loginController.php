@@ -41,9 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $degreeDuration = (int) $_POST['degreeDuration'];
             $uniID = $_POST['uniID'];
         }
-        if (isset($_POST['role']) && $_POST['role'] === "4") {
-            $authkey = $_POST['authkey'];
-        }
         if (isset($_POST['role']) && $_POST['role'] === "1") {
             $user_ins_query = "INSERT INTO user (Name, NIC, Address, ContactNo, Email, Password, RoleID) VALUES (?, ?, ?, ?, ?, ?, ?)";
             $student_ins_query = "INSERT INTO `student` (`UserID`, `DegDuration`, `UniID`) VALUES (?, ?, ?)";
@@ -60,21 +57,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $stmt->execute();
             $stmt->close();
             header('Location: /auth');
-        } else if (isset($_POST['role']) && $_POST['role'] === "4") {
-            if ($authkey === "BOARDME1234") {
-                $ins_query = "INSERT INTO user (Name, NIC, Address, ContactNo, Email, Password, RoleID) VALUES (?, ?, ?, ?, ?, ?, ?)";
-                $stmt = $mysqli->prepare($ins_query);
-                $stmt->bind_param("ssssssi", $name, $nic, $address, $contact, $signup_email, $signup_password, $role);
-                $stmt->execute();
-                $stmt->close();
-                header('Location: /auth');
-                exit;
-            } else {
-                echo "invalid Authkey";
-                exit;
-            }
         }
-    } else if (isset($_POST['role']) && ($_POST['role'] !== "1" || $_POST['role'] !== "4")) {
+    } else if (isset($_POST['role']) && ($_POST['role'] !== "1")) {
         $ins_query = "INSERT INTO user (Name, NIC, Address, ContactNo, Email, Password, RoleID) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $mysqli->prepare($ins_query);
         $stmt->bind_param("ssssssi", $name, $nic, $address, $contact, $signup_email, $signup_password, $role);
