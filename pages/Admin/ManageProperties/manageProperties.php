@@ -17,8 +17,19 @@ include_once './data/fetchProperties.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Manage Properties</title>
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
         .container {
-            padding-top: 20px;
+            flex: 1;
         }
 
         .table-responsive {
@@ -105,7 +116,9 @@ include_once './data/fetchProperties.php';
             </div>
         </div>
     </div>
-
+    <div class="mt-5">
+        <?php include_once './components/footer.php';?>
+    </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>

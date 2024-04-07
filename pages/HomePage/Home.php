@@ -53,19 +53,23 @@
             if(isset($_SESSION['role'])){
               if($_SESSION['role'] == "Student"){
                 echo '<a href="/explore" class="btn-more-info">Find a Place</a>
-                <a class="mx-2 btn-find-place">More info</a>';
+                <a href="#" class="mx-2 btn-find-place">More Info</a>';
               }else if($_SESSION['role'] == "Warden"){
                 echo '<a href="/explore" class="btn-more-info">Properties</a>
-                <a class="mx-2 btn-find-place">More info</a>';
+                <a href="#" class="mx-2 btn-find-place">More Info</a>';
               }else if($_SESSION['role'] == "Admin"){
                 echo '<a href="/explore" class="btn-more-info">Dashboard</a>
-                <a href="/" class="mx-2 btn-find-place">More info</a>
+                <a href="#" class="mx-2 btn-find-place">More Info</a>
               ';
-              }
-            }else{
-              echo '<a href="/explore" class="btn-more-info">Find a Place</a>
+              }else if($_SESSION['role'] == "Landlord"){
+                echo '<a href="/explore" class="btn-more-info">Add a Property</a>
+                <a href="#" class="mx-2 btn-find-place">More Info</a>
+              ';
+              }else{
+              echo '<a href="/explore" class="mx-4 btn-more-info">Find a Place</a>
                 <a href="/about" class="mx-2 btn-find-place">More Info</a>';
             }
+          }
             ?>
             </div>
           <img

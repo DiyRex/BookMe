@@ -1,6 +1,27 @@
-body{
-    height: 100vh;
-}
+html {
+    height: 100%; /* Ensure the full height of the window is used */
+    margin: 0; /* Reset default margin */
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    min-height: 100vh; /* Use min-height to ensure at least the viewport height */
+    margin: 0; /* Ensure no margin on the body */
+  }
+  
+  .container-fluid {
+    flex: 1; /* Allows the container to expand and fill available space */
+    display: flex;
+    flex-direction: column;
+    margin: 0; /* Reset any default margin */
+    padding: 0; /* Reset any default padding */
+  }
+  
+  /* Ensure the footer sticks to the bottom and has no margin pushing it down */
+  .footer {
+    margin-top: auto; /* This pushes the footer to the bottom */
+  }
 
 .box{
     width: 50%;
@@ -8,6 +29,7 @@ body{
     border-radius: 10px;
     padding: 40px;
     background-color: #004B23;
+    margin-bottom: 10%;
 }
 
 .title{

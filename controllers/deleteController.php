@@ -30,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === "GET" && isset($_GET['id']) && strpos($reques
             $stmt->bind_param("i", $id);
             $stmt->execute();
             $stmt->close();
+            header('Location: /articles');
         }else{
         }
     }
@@ -42,7 +43,9 @@ if ($_SERVER['REQUEST_METHOD'] === "GET" && isset($_GET['id']) && strpos($reques
             $stmt->bind_param("i", $id);
             $stmt->execute();
             $stmt->close();
+            header('Location: /mybookings');
         }else{
+            header('Location: /');
         }
     }
 }

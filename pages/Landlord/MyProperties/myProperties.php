@@ -94,7 +94,9 @@ EOT;
         
         <!-- end lines -->
     </div>
-
+    <div class="mt-5 footer">
+    <?php include_once './components/footer.php';?>
+</div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>

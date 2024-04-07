@@ -69,25 +69,28 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Admin") {
     </div>
 
    </div>
+   <div class="mt-5">
+        <?php include_once './components/footer.php';?>
+    </div>
    <script>
     function loadmodal(id){
         $("#confirmDeleteModal").modal('show');
         $('#confirmDeleteBtn').on('click', function() {
-            // Perform AJAX GET request to delete the article
+           
             $.ajax({
                 type: "GET",
                 url: "/deleteArticle?id=" + id,
                 success: function(response) {
-                    // Handle success
-                    location.reload(); // Reload the page to update the list
+                    
+                    location.reload(); 
                 },
                 error: function(xhr, status, error) {
-                    // Handle error
+                   
                     alert("Failed to delete the article.");
                 }
             });
 
-            // Close the modal
+            
             $('#confirmDeleteModal').modal('hide');
         });
     }

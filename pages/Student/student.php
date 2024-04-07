@@ -53,7 +53,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Student"){
 <body>
 <?php include_once './components/navbar.php'; ?>
     <div class="container mt-4">
-        <h2 class="text-center mt-md-4 mb-5"><i class="fa-solid fa-location-dot"></i> Explore <span style="color: #38b000">Boardings</span></h2>
+        <h2 class="text-center mt-md-4 mb-5"><i class="fa-solid fa-location-dot"></i> Explore <span style="color: #38b000">Accomodations</span></h2>
         <div id="alert-placeholder"></div>
         <div class="row">
             <div class="col-lg-8 mb-4 map-container">
@@ -89,13 +89,13 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Student"){
                         <h5 class="card-title" id="card-title">Property Title</h5>
                         <p class="card-text description" id="card-desc">Description</p>
                         <p class="card-text" ><strong>Address: </strong><span id="card-address"></span></p>
-                        <p class="card-text" ><strong>Keymoney: </strong><span id="card-keymoney"></span></p>
-                        <p class="card-text" ><strong>Rent: </strong><span id="card-rent"></span></p>
+                        <p class="card-text" ><strong>Keymoney: LKR </strong><span id="card-keymoney"></span></p>
+                        <p class="card-text" ><strong>Rent: LKR </strong><span id="card-rent"></span></p>
                         <p class="card-text" ><strong>Bed Count: </strong><span id="card-bed"></span></p>
                         <p class="card-text" ><strong>Student Count:</strong> <span id="card-student"></span></p>
                         <div id="action-buttons" class="d-flex justify-content-between">
                             <button type="button" class="btn btn-success btn-half-width">Book Now</button>
-                            <button type="button" class="btn btn-danger btn-half-width">Contact Now</button>
+                            <a href="#" type="button" class="btn btn-danger btn-half-width">Contact Now</a>
                         </div>
                     </div>
                 </div>
@@ -171,8 +171,9 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Student"){
                             const actionButtons = document.getElementById('action-buttons');
                             actionButtons.innerHTML = `
                                     <button onclick="addBooking(${data.property.PropertyID})" class="btn btn-success btn-half-width" role="button">Book Now</button>
-                                    <a href="/contact?id=${data.property.PropertyID}" class="btn btn-danger btn-half-width" role="button">Contact Now</a>
+                                    <a href="#" class="btn btn-danger btn-half-width" role="button">Contact Now</a> 
                                 `;
+                                // /contact?id=${data.property.PropertyID}
                                 
 
                         })

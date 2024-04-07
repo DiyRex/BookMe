@@ -56,7 +56,7 @@ $bookings = fetchLndBookingsByID($stdID);
             <div class="col-md-12">
                 <div class="search-box">
                     <i class="fa fa-search"></i>
-                    <input type="text" class="form-control" id="searchInput" placeholder="Search by name..." onkeyup="searchName()">
+                    <input type="text" class="form-control" id="searchInput" placeholder="Search by Property..." onkeyup="searchName()">
                 </div>
                 <div class="table-responsive">
                     <table class="table align-middle" id="userTable">
@@ -76,6 +76,7 @@ $bookings = fetchLndBookingsByID($stdID);
                                 foreach ($bookings as $booking) {
                                 $bookingID = $booking['BookingID'];
                                 $deletebtn = "<a href='/deleteBooking?id=$bookingID' class='btn btn-danger btn-sm text-white'><i class='fa-solid fa-trash'></i></a>";
+                                $acceptbtn = "<a href='#' class=' mx-2 btn btn-success btn-sm text-white'><i class='fa-solid fa-check'></i></a>";
                                 echo "
                                 <tr>
                                 <td>" . htmlspecialchars($booking['BookingID']) . "</td>
@@ -83,7 +84,7 @@ $bookings = fetchLndBookingsByID($stdID);
                                 <td>" . htmlspecialchars($booking['StudentName']) . "</td>
                                 <td>" . htmlspecialchars($booking['ContactNo']) . "</td>
                                 <td>" . htmlspecialchars($booking['BookingDate']) . "</td>
-                                <td>" . $deletebtn . "</td>
+                                <td>" . $deletebtn . $acceptbtn ."</td>
                                 </tr>
                                 ";
                             }}else{
@@ -100,7 +101,9 @@ $bookings = fetchLndBookingsByID($stdID);
             </div>
         </div>
     </div>
-
+    <div class="mt-5">
+        <?php include_once './components/footer.php';?>
+    </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>

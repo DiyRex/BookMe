@@ -22,7 +22,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Student") {
     <div class="container">
 
         <div class="col-12">
-            <h2 class="text-center mt-4 mb-4"><i class="fa-solid fa-book"></i>  <span style="color: #38b000">Articles</span></h2>
+            <h2 class="text-center mt-4 mb-4"><i class="fa-solid fa-book"></i>  <span style="color: #38b000">Article Wall</span></h2>
             <?php
             include_once './data/fetchArticles.php';
             $articles = fetchArticles();
@@ -63,6 +63,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Student") {
     </div>
     </div>
 
+   </div>
+   <div class="mt-3">
+   <?php include_once './components/footer.php';?>
    </div>
    <script>
     function loadmodal(id){

@@ -19,8 +19,15 @@ $bookings = fetchStdBookingsByID($stdID);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+         body{
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
         .container {
             padding-top: 20px;
+            flex: 1;
         }
 
         .table-responsive {
@@ -56,7 +63,7 @@ $bookings = fetchStdBookingsByID($stdID);
             <div class="col-md-12">
                 <div class="search-box">
                     <i class="fa fa-search"></i>
-                    <input type="text" class="form-control" id="searchInput" placeholder="Search by name..." onkeyup="searchName()">
+                    <input type="text" class="form-control" id="searchInput" placeholder="Search by Property..." onkeyup="searchName()">
                 </div>
                 <div class="table-responsive">
                     <table class="table align-middle" id="userTable">
@@ -98,6 +105,9 @@ $bookings = fetchStdBookingsByID($stdID);
                 </div>
             </div>
         </div>
+    </div>
+    <div class="mt-5">
+        <?php include_once './components/footer.php';?>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

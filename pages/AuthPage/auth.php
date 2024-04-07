@@ -158,6 +158,9 @@
     </div>
 
   </div>
+  <div class="mt-5 footer">
+    <?php include_once './components/footer.php'?>
+  </div>
   <script>
     // student only
     var role = document.getElementById('roleSelect');

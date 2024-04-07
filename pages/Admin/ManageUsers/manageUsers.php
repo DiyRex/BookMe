@@ -12,13 +12,24 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Admin") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Users</title>
+    <link rel="stylesheet" href="./components/navbar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        .container {
-            padding-top: 20px;
+        html, body {
+            height: 100%;
+            margin: 0;
         }
 
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            flex: 1; 
+        }
         .table-responsive {
             margin: auto;
         }
@@ -45,7 +56,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Admin") {
 </head>
 
 <body>
-
+<?php include_once './components/navbar.php';?>
     <div class="container">
         <h1 class="text-center main-title mt-4 mb-4"><i class="fa-solid fa-person" style="color: #38B000;"></i> Manage <span style="color: #38b000">Users</span></h1>
         <div class="row">
@@ -106,6 +117,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Admin") {
                 </div>
             </div>
         </div>
+    </div>
+    <div class="mt-5">
+        <?php include_once './components/footer.php';?>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

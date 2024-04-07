@@ -15,6 +15,22 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Admin") {
     <link rel="stylesheet" href="./components/navbar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; 
+        }
+
+        .container {
+            flex: 1; 
+        }
+    </style>
 </head>
 
 <body>
@@ -32,7 +48,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Admin") {
         <div id="successAlert" class="alert alert-success" role="alert" style="display: none;">
         Published successfully!
         </div>
-        <h2 class="mb-4">Write Your Article</h2>
+        <h2 class="mb-4">Edit Article</h2>
         <form id="articleform" method="POST">
             <input type="hidden" id="author_id" value=<?=$authorID?>>
             <input type="hidden" id="article_id" value=<?=$_GET['id']?>>
@@ -55,7 +71,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Admin") {
             <!-- Trigger Modal Button -->
             <div class="form-group row">
                 <div class="col-sm-10">
-                    <button type="button" data-toggle="modal" data-target="#articleModal" class="btn text-white" style="background-color: #004B23;">Submit Article</button>
+                    <button type="button" data-toggle="modal" data-target="#articleModal" class="btn text-white" style="background-color: #004B23;">Update Article</button>
                     <a href="/explore?action=article" type="button" class="btn btn-secondary text-white">Back to Articles</a>
                 </div>
             </div>
@@ -83,7 +99,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Admin") {
     </div>
     </div>
 
-
+    <div class="mt-5">
+        <?php include_once './components/footer.php';?>
+    </div>
     <script>
     function submitArticle() {
         var formData = {
@@ -93,26 +111,26 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Admin") {
             art_author: $("#author_id").val()
         };
 
-        // Ajax POST request.
+
         $.ajax({
             type: "POST",
-            url: "/editArticle", // Replace with the URL where you want to submit the form data.
+            url: "/editArticle", 
             data: formData,
             success: function(response) {
-                // Handle success.
+       
                 console.log("Response from server: ", response);
-                $("#successAlert").text("Published successfully!").show().delay(5000).fadeOut(); // Show success message and hide after a delay.
+                $("#successAlert").text("Published successfully!").show().delay(5000).fadeOut();
             },
             error: function(xhr, status, error) {
-                // Handle error.
+     
                 console.error("Error occurred: ", status, error);
-                // Optionally, display an error message.
+       
                 $("#successAlert").addClass('alert-danger').text("Failed to publish!").show().delay(5000).fadeOut();
             }
         });
         
-        $("#articleModal").modal('hide'); // Hide the modal.
-        $("#successAlert").show().delay(5000).fadeOut(); // Show success message and hide after a delay.
+        $("#articleModal").modal('hide'); 
+        $("#successAlert").show().delay(5000).fadeOut(); 
         
     }
     </script>

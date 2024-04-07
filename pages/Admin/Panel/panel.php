@@ -16,6 +16,20 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Admin") {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        html, body {
+            height: 100%; /* Make sure the html and body are at least the height of the viewport */
+            margin: 0; /* Reset default margin */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            min-height: 100vh; /* Use min-height to ensure it's at least the height of the viewport */
+        }
+
+        .container {
+            flex: 1; /* Allow the container to grow and take up available space */
+        }
         .btn-custom {
             color: #fff;
             padding: 10px 20px;
@@ -64,6 +78,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== "Admin") {
                 <button type="submit" class="btn btn-custom btn-pending-properties">Pending Properties</button>
             </form> -->
         </div>
+    </div>
+    <div class="mt-5">
+        <?php include_once './components/footer.php';?>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
