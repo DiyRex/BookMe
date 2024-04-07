@@ -33,16 +33,14 @@
               <?php
                if(isset($_SESSION['role'])){
                 if($_SESSION['role'] == "Student"){
-                  echo '<h4> Are you looking for some accommodation Until become an
-                  undergraduate.</h4>';
+                  echo '<h4 class="text-center"> Are you looking for a place to stay till you become a proud graduade of NSBM Green University. Look no more, this is the place you will find your ideal accomodation to enjoy your university life.</h4>';
                 }else if($_SESSION['role'] == "Landlord"){
-                  echo '<h4> Are you looking somewhere to post your accomodation advertisements.</h4>';
+                  echo '<h4 class="text-center"> Are you looking for a place to post your accomodation advertisements? Look no more, BookMe is your ideal place to promote your facility.</h4>';
                 }else if($_SESSION['role'] == "Warden"){
-                  echo '<h4> Arrange better accomodations for students.</h4>';
+                  echo '<h4 class="text-center"> Helping students find the best accomodations to suite their needs while looking after the safety of the students.</h4>';
                 }
                }else{
-                echo '<h4> Are you looking for some accommodation Until become an
-                  undergraduate.</h4>';
+                echo '<h4 class="text-center"> Are you looking for a place to stay till you become a proud graduade of NSBM Green University. Look no more, this is the place you will find your ideal accomodation to enjoy your university life.</h4>';
                }
               ?>
              
@@ -66,7 +64,7 @@
               }
             }else{
               echo '<a href="/explore" class="btn-more-info">Find a Place</a>
-                <a class="mx-2 btn-find-place">More info</a>';
+                <a href="/about" class="mx-2 btn-find-place">More Info</a>';
             }
             ?>
             </div>
@@ -89,9 +87,9 @@
       <div class="col-12 d-flex flex-column align-items-center ">
         <div class="content d-flex flex-column align-items-center">
           <h2 class="mb-5">PURPOSE</h2>
-          <p class="desc text-center">Your Ultimate Destination for Student Boarding Solutions. Effortlessly find your ideal student accommodation with us.</p>
+          <p class="desc text-center mb-5">Being your ultimate destination in finding the ideal accomodation to meet all your needs as a student. Saving time and giving you the best options under direct supervision.</p>
         </div>
-        <div class="img-wrapper">
+        <div class="img-wrapper mt-3">
           <img class="purpose-image" src="./pages/HomePage/images/rent.png" alt="">
         </div>
       </div>

@@ -37,11 +37,11 @@
             </div>
           </div>
           <div class="d-flex justify-content-center mt-5">
-            <button type="submit" class="btn btn-success py-2 px-4">Login</button>
+            <button type="submit" class="btn btn-success py-2 px-4" style="font-size: 18px;">Login</button>
           </div>
         </form>
         <div class="d-flex justify-content-center mt-3 mb-3">
-          <h4 class="mt-3" style="font-size: small;">Don’t have an account? <a id="showSignup" style="color: #38B000; cursor:pointer;">Sign Up</a></h4>
+          <h4 class="mt-3" style="font-size: medium;">Don’t have an account? <a class="HoverSwitch" id="showSignup" style="color: #38B000; cursor:pointer;">Sign Up</a></h4>
         </div>
       </div>
     </div>
@@ -135,12 +135,12 @@
           <!-- Admin only -->
           <div id="adminOnly" class="d-none">
             <div class="form-group">
-              <label for="inputEmail">Authkey</label>
+              <label for="inputEmail">Verification Key</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text"><i class="fa-solid fa-key" style="color: #38B000;"></i></div>
                 </div>
-                <input type="text" class="form-control" id="authkey" name="authkey" placeholder="Authkey">
+                <input type="text" class="form-control" id="authkey" name="authkey" placeholder="Verification Key">
               </div>
             </div>
           </div>
@@ -164,11 +164,11 @@
             </div>
           </div>
           <div class="d-flex justify-content-center mt-5">
-            <button type="submit" class="btn btn-success">Sign Up</button>
+            <button type="submit" class="btn btn-success" style="font-size: 18px;">Sign Up</button>
           </div>
         </form>
         <div class="d-flex justify-content-center  mt-3 mb-5">
-          <h4 class="mt-3" style="font-size: small;">Already have an account? <a id="showLogin" style="color: #38B000; cursor:pointer;">Login</a></h4>
+          <h4 class="mt-3" style="font-size: medium;">Already have an account? <a class="HoverSwitch" id="showLogin" style="color: #38B000; cursor:pointer;">Login</a></h4>
         </div>
       </div>
     </div>

@@ -10,6 +10,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <!-- <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css" /> -->
     <!-- <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/abouts/about-1/assets/css/about-1.css" /> -->
     <title>About Us</title>
@@ -27,8 +28,8 @@
                     <div class="row justify-content-xl-center">
                         <div class="col-12 col-xl-11">
                             <h2 class="h1 mb-3">What is BookMe ?</h2>
-                            <p class="lead fs-4 text-secondary mb-3">We are dedicated to connecting students seeking boarding places with property owners looking to rent out their spaces. Our website is crafted to facilitate seamless connections between these two groups, ensuring both find exactly what they're looking for. Our mission is to provide an easy, reliable, and efficient platform that supports students in finding their ideal home away from home, while simultaneously assisting property owners in finding responsible occupants for their rentals.</p>
-                            <p class="mb-5">We are a passionate team of second-year students from NSBM Green University, united by a shared vision to streamline the process of finding boarding places for students and assisting landlords in renting out their properties with ease and responsibility. Born from our own experiences and the challenges we've witnessed among peers, our website serves as a bridge connecting students in search of comfortable, secure, and convenient accommodations with property owners looking to rent their spaces to trustworthy tenants.
+                            <p class="lead fs-4 text-secondary mb-3 text-justify">We are dedicated to connecting students seeking boarding places with property owners looking to rent out their spaces. Our website is crafted to facilitate seamless connections between these two groups, ensuring both find exactly what they're looking for. Our mission is to provide an easy, reliable, and efficient platform that supports students in finding their ideal home away from home, while simultaneously assisting property owners in finding responsible occupants for their rentals.</p>
+                            <p class="mb-5 text-justify">We are a passionate team of second-year students from NSBM Green University, united by a shared vision to streamline the process of finding boarding places for students and assisting landlords in renting out their properties with ease and responsibility. Born from our own experiences and the challenges we've witnessed among peers, our website serves as a bridge connecting students in search of comfortable, secure, and convenient accommodations with property owners looking to rent their spaces to trustworthy tenants.
 
                                 Understanding the unique needs and concerns of both students and landlords, we've meticulously designed our platform to offer a simple, effective, and user-friendly solution. For students, we aim to eliminate the stress and uncertainty of finding the right place to call home during their academic journey. For landlords, we provide a reliable channel to showcase their properties to a focused audience, ensuring a quicker and more satisfactory rental process.
 

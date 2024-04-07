@@ -36,21 +36,21 @@ echo '
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-3 mr-auto">
           <li class="nav-item active">
-            <a class="nav-link text-white" href="/"
+            <a class="nav-link nav-it text-white" href="/"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="/explore">Explore</a>
+            <a class="nav-link nav-it text-white" href="/explore">Explore</a>
           </li>
           
 ';
 if (isset($_SESSION['role']) && $_SESSION['role'] === 'Student' && $_SESSION['loggedin'] === true) {
   echo '<li class="nav-item">
-                          <a class="nav-link text-white" href="/articles">Articles</a>
+                          <a class="nav-link nav-it text-white" href="/articles">Articles</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link text-white" href="/mybookings">My Bookings</a>
+                          <a class="nav-link nav-it text-white" href="/mybookings">My Bookings</a>
                         </li>';
 }else if (isset($_SESSION['role']) && $_SESSION['role'] === 'Landlord' && $_SESSION['loggedin'] === true) {
   echo ' <li class="nav-item">
@@ -60,7 +60,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Student' && $_SESSION['lo
 }
 echo '
           <li class="nav-item">
-            <a class="nav-link text-white" href="/about">About Us</a>
+            <a class="nav-link nav-it text-white" href="/about">About Us</a>
           </li>
         </ul>
         
@@ -79,7 +79,7 @@ if (isset($_SESSION['email']) && $_SESSION['loggedin'] == true) {
 </div>"
 ';
 } else {
-  echo '<a class="btn btn-outline-success my-2 my-sm-0 text-white" href="/auth" type="submit">Login/Signup</a>';
+  echo '<a class="btn btn-outline-success my-2 mx-5 my-sm-0 text-white" href="/auth" type="submit">Login/Signup</a>';
 }
 
 echo "</div>

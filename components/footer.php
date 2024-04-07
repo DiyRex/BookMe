@@ -5,11 +5,11 @@ echo <<<EOT
    <!-- footer -->
     <footer class="navobj text-light pt-4">
   <div class="container">
-    <div class="row">
+    <div class="row justify-content-center">
       <!-- First Column -->
       <div class="col-md-3 d-flex flex-column align-items-center justify-content-center">
         <h5>BookMe</h5>
-        <p>Contact with us:</p>
+        <p>Get in Touch</p>
         <!-- Social Media Icons -->
         <div class="d-flexflex-row">
           <a href="#" class="text-light me-2 mx-2"><i class="fab fa-facebook-f"></i></a>
@@ -18,7 +18,7 @@ echo <<<EOT
         </div>
       </div>
       <!-- Second Column -->
-      <div class="col-md-3 px-5 mt-2 mt-md-0 px-md-0">
+      <div class="col-md-2 px-5 mt-2 mt-md-0 px-md-0 text-center">
         <nav class="nav flex-column">
           <a class="nav-link text-light p-0" href="/">Home</a>
           <a class="nav-link text-light p-0" href="#">Privacy</a>
@@ -26,7 +26,7 @@ echo <<<EOT
         </nav>
       </div>
       <!-- Third Column -->
-      <div class="col-md-3 px-5 mt-2 mt-md-0 px-md-0">
+      <div class="col-md-2 px-5 mt-2 mt-md-0 px-md-0 text-center">
         <nav class="nav flex-column">
            <a class="nav-link text-light p-0" href="#">Safety Tips</a>
           <a class="nav-link text-light p-0" href="#">Landlord Guides</a>
@@ -34,7 +34,7 @@ echo <<<EOT
         </nav>
       </div>
       <!-- Fourth Column -->
-      <div class="col-md-3 px-5 mt-2 mt-md-0 px-md-0">
+      <div class="col-md-2 px-5 mt-2 mt-md-0 px-md-0 text-center">
         <nav class="nav flex-column">
            <a class="nav-link text-light p-0" href="#">Articles</a>
           <a class="nav-link text-light p-0" href="#">Recommendations</a>
