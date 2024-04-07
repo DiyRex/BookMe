@@ -28,17 +28,17 @@ echo <<<EOT
       <!-- Third Column -->
       <div class="col-md-3 px-5 mt-2 mt-md-0 px-md-0">
         <nav class="nav flex-column">
-           <a class="nav-link text-light p-0" href="#">Home</a>
-          <a class="nav-link text-light p-0" href="#">Privacy</a>
-          <a class="nav-link text-light p-0" href="#">Explore</a>
+           <a class="nav-link text-light p-0" href="#">Safety Tips</a>
+          <a class="nav-link text-light p-0" href="#">Landlord Guides</a>
+          <a class="nav-link text-light p-0" href="#">Student Guides</a>
         </nav>
       </div>
       <!-- Fourth Column -->
       <div class="col-md-3 px-5 mt-2 mt-md-0 px-md-0">
         <nav class="nav flex-column">
-           <a class="nav-link text-light p-0" href="#">Home</a>
-          <a class="nav-link text-light p-0" href="#">Privacy</a>
-          <a class="nav-link text-light p-0" href="#">Explore</a>
+           <a class="nav-link text-light p-0" href="#">Articles</a>
+          <a class="nav-link text-light p-0" href="#">Recommendations</a>
+          <a class="nav-link text-light p-0" href="#">FAQ</a>
         </nav>
       </div>
     </div>

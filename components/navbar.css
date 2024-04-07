@@ -4,8 +4,28 @@
 
 .navobj{
     background-color: #004B23;
+    padding-bottom: 10px !important;
 }
+
+/* .navbarHeight{
+    height: 70px !important;
+} */
 
 .vh100{
     height: 100vh;
+}
+
+.nav-link {
+    border-bottom: 1px solid transparent; /* Add a transparent border by default */
+    transition: color 0.2s, border-bottom-color 0.2s; /* Optional: Smooth transition for color and border color */
+}
+
+.nav-link:hover {
+    color: rgb(72, 238, 30) !important;
+    border-bottom-color: rgb(72, 250, 72); /* Only change the color of the border on hover */
+    line-height: 1.5;
+}
+
+.brand:hover{
+    color: rgb(72, 238, 30) !important;
 }

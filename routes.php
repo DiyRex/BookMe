@@ -4,6 +4,7 @@ $routes = [
     "/" => "pages/HomePage/Home.php",
     "/auth" => "controllers/loginController.php",
     "/explore" => "controllers/exploreController.php",
+    "/about" => "controllers/aboutController.php",
     "/logout" => "controllers/logout.php",
     "/addProperty" => "controllers/propertyController.php",
     "/getProperty" => "controllers/propertyController.php",

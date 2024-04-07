@@ -11,10 +11,11 @@
 </head>
 
 <body>
-  <div class="container-fluid col-12 col-md-8">
+  <?php include_once './components/navbar.php';?>
+  <div class="container-fluid col-12 col-md-8 col-lg-6">
     <div id="login-form" class="d-flex flex-column align-items-center justify-content-center">
       <h1 class="text-center title"><i class="fa-solid fa-lock" style="color: #38B000;"></i> Login</h1>
-      <div class="box col-10 col-md-4 text-white">
+      <div class="box col-10 col-lg-5 col-md-8 text-white">
         <form action="/auth" method="POST">
           <input type="hidden" name="mode" value="login">
           <div class="form-group">
@@ -173,7 +174,6 @@
     </div>
 
   </div>
-
   <script>
     // student only
     var role = document.getElementById('roleSelect');

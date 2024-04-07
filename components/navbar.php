@@ -5,9 +5,9 @@ echo '
     <head>
     <link rel="stylesheet" href="../components/navbar.css">
     </head>
-    <nav class="navbar navbar-expand-lg navobj">
+    <nav class="navbar navbar-expand-lg navobj navbarHeight">
       <div class="col-3 col-md-5">
-        <a class="navbar-brand text-white" href="/">BookMe</a>
+        <a class="navbar-brand text-white brand" href="/">BookMe</a>
       </div>
       <button
         class="togbtn navbar-toggler"
@@ -60,7 +60,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Student' && $_SESSION['lo
 }
 echo '
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Contact Us</a>
+            <a class="nav-link text-white" href="/about">About Us</a>
           </li>
         </ul>
         
