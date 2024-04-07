@@ -11,6 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && strpos($requestPath, '/publishArtic
             $id = (int) $_SESSION['user_id'];
             $title = $_POST['art_title'];
             $body = $_POST['art_body'];
+            if(!isset($title) || !isset($id) | !isset($body)){
+                header('Location: /');
+            }
             $query = "INSERT INTO articles (AuthorID,Title,Content) VALUES (?,?,?)";
             $stmt = $mysqli->prepare($query);
             if (!$stmt) {

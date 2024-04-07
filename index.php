@@ -10,6 +10,6 @@ if (array_key_exists($Route, $routes)) {
     // Include the file corresponding to the route
     include $routes[$Route];
 } else {
-    // Route not found, you can redirect to a 404 page or show an error message
+    // Route not found
     echo "404 Not Found";
 }
