@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="./pages/AuthPage/auth.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <title>Login</title>
+  <title>BookMe Login</title>
 </head>
 
 <body>
@@ -15,10 +15,10 @@
   <div class="container-fluid col-12 col-md-8 col-lg-6">
     <div id="login-form" class="d-flex flex-column align-items-center justify-content-center">
       <h1 class="text-center title"><i class="fa-solid fa-lock" style="color: #38B000;"></i> Login</h1>
-      <div class="box col-10 col-lg-5 col-md-8 text-white">
+      <div class="box col-10 col-lg-6 col-md-8 text-white">
         <form action="/auth" method="POST">
           <input type="hidden" name="mode" value="login">
-          <div class="form-group">
+          <div class="form-group py-2">
             <label for="inlineFormInputGroupUsername">Email</label>
             <div class="input-group">
               <div class="input-group-prepend">
@@ -37,11 +37,11 @@
             </div>
           </div>
           <div class="d-flex justify-content-center mt-5">
-            <button type="submit" class="btn btn-success">Login</button>
+            <button type="submit" class="btn btn-success py-2 px-4">Login</button>
           </div>
         </form>
-        <div class="d-flex justify-content-center mt-3">
-          <h4 style="font-size: small;">Don’t have an account? <a id="showSignup" style="color: #38B000;">Sign Up</a></h4>
+        <div class="d-flex justify-content-center mt-3 mb-3">
+          <h4 class="mt-3" style="font-size: small;">Don’t have an account? <a id="showSignup" style="color: #38B000; cursor:pointer;">Sign Up</a></h4>
         </div>
       </div>
     </div>
@@ -50,7 +50,7 @@
 
     <div id="signup-form" class="d-none flex-column align-items-center justify-content-center">
       <h1 class="text-center title"><i class="fa-solid fa-lock" style="color: #38B000;"></i> Sign Up</h1>
-      <div class="box col-10 col-md-4 text-white">
+      <div class="box col-10 col-lg-6 col-md-8 mb-5 text-white">
         <form action="/auth" method="POST">
           <input type="hidden" name="mode" value="signup">
           <div class="form-group">
@@ -167,8 +167,8 @@
             <button type="submit" class="btn btn-success">Sign Up</button>
           </div>
         </form>
-        <div class="d-flex justify-content-center mt-3">
-          <h4 style="font-size: small;">Already have an account? <a id="showLogin" style="color: #38B000;">Login</a></h4>
+        <div class="d-flex justify-content-center  mt-3 mb-5">
+          <h4 class="mt-3" style="font-size: small;">Already have an account? <a id="showLogin" style="color: #38B000; cursor:pointer;">Login</a></h4>
         </div>
       </div>
     </div>
